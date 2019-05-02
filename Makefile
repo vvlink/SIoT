@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = SIoT使用手册
+SPHINXPROJ    = SIoT
 SOURCEDIR     = source
 BUILDDIR      = build
 

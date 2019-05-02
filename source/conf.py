@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'SIoT'
+project = 'SIoT使用手册'
 copyright = '2019, VVlink'
 author = 'VVlink'
 
