@@ -1,0 +1,7 @@
+{
+    "User": "siot",
+    "Password": "dfrobot",
+    "WebServerAdrr": "0.0.0.0:8080",
+    "MqttAdrr": "0.0.0.0:1883",
+    "OnlyLocalURD": false
+}
