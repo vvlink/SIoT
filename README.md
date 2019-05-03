@@ -1,5 +1,11 @@
-# SIoT使用手册
+# SIoT
 
+SIoT为一个为教育定制的跨平台的MQTT服务器程序，S指科学（Science）、简单（simple）的意思。SIoT支持Win10、Win7、Mac、Linux等操作系统，一键启动，无需注册即可使用。
+
+项目发起人：“虚谷计划”组委会
+
+
+# SIoT使用手册
 ### 目录：
 
 简介:
