@@ -1,9 +1,20 @@
-➜  BookData git:(master) ✗ ls source/setup
-01_down.rst	02_run.rst	03_view.rst
-index.rst  
-➜  BookData git:(master) ✗ cat source/setup*
 
 界面简介
 =========================
 
 
+登录Web页面
+--------
+
+查看项目
+-------
+
+
+查看设备
+-------
+
+查看数据
+-------
+
+发送消息
+--------
