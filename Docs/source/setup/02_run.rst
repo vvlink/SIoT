@@ -11,12 +11,12 @@ SIoT是一个绿色软件，将下载的压缩包解开后，将看到多个文�
 
 根据自己的操作系统，运行相应的软件即可。
 
-### Window版本：
+Window版本：
 -----------
 
 双击运行SIoT_win.exe，将看到一个黑色的CMD窗口，不要关闭。
 
-### Mac版本：
+Mac版本：
 ------------
 
 打开终端运行，转到相应目录然后执行命令，如“./SIoT_mac”。
@@ -28,14 +28,14 @@ SIoT是一个绿色软件，将下载的压缩包解开后，将看到多个文�
 参考命令：nohup node /Users/xiezuoru/Desktop/iot_test/SIOT_Mac &
 其中“/Users/xiezuoru/Desktop/iot_test/SIOT_Mac”为程序的路径。
 
-### linux版本：
+linux版本：
 -----------
 
 nohup ./SIoT_linux &
 其中“SIoT_linux”为程序的路径。
 
 
-## 服务器信息
+服务器信息
 ---------
 SIoT启动后，电脑就成为了一个标准的MQTT服务器：
 服务器地址：电脑IP
