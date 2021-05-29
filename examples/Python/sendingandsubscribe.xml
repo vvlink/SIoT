@@ -1,0 +1,229 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="m/kSx~GJhB1a.0]?D%Hp" x="-364" y="-209">
+    <value name="ssid">
+      <shadow type="text" id="JG.$Aoci4%wWre*tC34b">
+        <field name="TEXT">CMCC-CrZz</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="|0;)0S!;%ENseuAV$FNk">
+        <field name="TEXT">earabfx2</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="mpython_display_DispChar_5lines" id="Oz(KmXakEhaMbIMZ%}7o">
+        <field name="TEXTMODE">1</field>
+        <value name="DispChar_5lines">
+          <shadow type="mpython_4_lines" id="rLosZV|^.4NPfkQ^-p%?">
+            <field name="mpython_4_lines">0</field>
+          </shadow>
+        </value>
+        <value name="message">
+          <shadow type="text" id="D4A.3#l1XogA?NvRCtj^">
+            <field name="TEXT">Hello, world!</field>
+          </shadow>
+          <block type="mpython_WiFi_config" id="C0DAO!yokvs[z*oH72*1">
+            <field name="WiFi_config">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="mpython_display_Show" id="@1d2xf1,$jJ_lc/lVv,5">
+            <next>
+              <block type="mqtt_setup" id="B(F0bp9F|;GiQR6m[p)Q">
+                <value name="Server">
+                  <shadow type="text" id="=$:?v}$7]Pa~BlZn-+iL">
+                    <field name="TEXT">192.168.1.8</field>
+                  </shadow>
+                </value>
+                <value name="Client_ID">
+                  <shadow type="text" id="XgR7ZW+o.8PM1mNR%Vby">
+                    <field name="TEXT">my</field>
+                  </shadow>
+                </value>
+                <value name="Iot_id">
+                  <shadow type="text" id="5jln#-?e]:jMm0h74bX?">
+                    <field name="TEXT">siot</field>
+                  </shadow>
+                </value>
+                <value name="Iot_pwd">
+                  <shadow type="text" id="Q|pC,P(|{hA`]L_)Bb$z">
+                    <field name="TEXT">dfrobot</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="mqtt_connect" id="`w;-Eg0s92Ca*Q,.!gPB">
+                    <next>
+                      <block type="mpython_Timer" id="iN}BSOKN)?cjyHJXOQEt">
+                        <field name="Timer_mode">PERIODIC</field>
+                        <value name="Num">
+                          <shadow type="mpython_timer_option" id="1:2#Yo@6U,[F6_8{?`7#">
+                            <field name="Timer_num">10</field>
+                          </shadow>
+                        </value>
+                        <value name="period">
+                          <shadow type="math_number" id="7x_OsZ.trTx`{q|oH98K">
+                            <field name="NUM">5000</field>
+                          </shadow>
+                        </value>
+                        <statement name="DO">
+                          <block type="mqtt_publish" id="a[xsB83:wkf(Ls_#BhX8">
+                            <value name="msg">
+                              <shadow type="text" id="U,#l:~4q}e53yX2ijMoJ">
+                                <field name="TEXT">hello</field>
+                              </shadow>
+                              <block type="text_join" id="bZfL:7v#MHp1J^~)2R6g">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                  <block type="mpython_read_light" id=".hBZyirdiic0*wgP^DL9"></block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="topic">
+                              <shadow type="text" id="6}l6n^Oei+#u.]6%-0wi">
+                                <field name="TEXT">my/004</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="mqtt_rec_from_topic" id="fVSty[j48~d_=%(YEVKP">
+                            <field name="topic">my/004</field>
+                            <value name="msg">
+                              <block type="variables_get" id="]gr[u4YAE-tnN2;K__Jd">
+                                <field name="VAR">_msg</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="mpython_display_DispChar_5lines" id="z/tc-7UieU5#Sex!kXUs">
+                                <field name="TEXTMODE">1</field>
+                                <value name="DispChar_5lines">
+                                  <shadow type="mpython_4_lines" id="q=izZ)QDeg),+DSF6KJR">
+                                    <field name="mpython_4_lines">32</field>
+                                  </shadow>
+                                </value>
+                                <value name="message">
+                                  <shadow type="text" id="y)r}AVu|.eu34:M;7Y_J">
+                                    <field name="TEXT">                </field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_DispChar_5lines" id="Tf@a@+Ba7=C^6Nb5I;{u">
+                                    <field name="TEXTMODE">1</field>
+                                    <value name="DispChar_5lines">
+                                      <shadow type="mpython_4_lines" id="qBnCDu,f$$y|o:WB4zQe">
+                                        <field name="mpython_4_lines">16</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="message">
+                                      <shadow type="text" id="xXeBT!bFG)$UpNoO}+=f">
+                                        <field name="TEXT">光线值</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="mpython_display_DispChar_5lines" id="Mxs.$jsDF#{r-L3dE%nD">
+                                        <field name="TEXTMODE">1</field>
+                                        <value name="DispChar_5lines">
+                                          <shadow type="mpython_4_lines" id="ZE%5b{$TYg[[97DNA:Kp">
+                                            <field name="mpython_4_lines">32</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="message">
+                                          <shadow type="text" id="=h7Lv|45uRJoD!69.8N+">
+                                            <field name="TEXT">Hello, world!</field>
+                                          </shadow>
+                                          <block type="variables_get" id="xG9kIPu$3VjPD%53#T$w">
+                                            <field name="VAR">_msg</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="mpython_display_Show" id="y4H3T/x,:.Fsh=br//ov">
+                                            <next>
+                                              <block type="controls_if" id="t{E2jp{@TpO*;0TjhaSy">
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id="b9azdq2^O[s@,9Hj}_d5">
+                                                    <field name="OP">EQ</field>
+                                                    <value name="A">
+                                                      <block type="text_join" id="IAM.mCh^loV|$}LIQ]9P">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="variables_get" id="Sc1_-1!,P.00Vbn~~U{+">
+                                                            <field name="VAR">_msg</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="text" id="qY4$?qLGtZptXEPw(s*h">
+                                                        <field name="TEXT">on</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="mpython_set_RGB_color" id="pn%Hn;Wj?H}r0{kp}Bc2">
+                                                    <field name="COLOUR">#ff0000</field>
+                                                    <value name="num">
+                                                      <shadow type="math_number" id="D@w8t{hn/}}PBn@ye1@K">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="controls_if" id="-3pTqP)(Z(k+XN(iz5nn">
+                                                    <value name="IF0">
+                                                      <block type="logic_compare" id="GyGN$Y`8UV4@d,E[KQ2z">
+                                                        <field name="OP">EQ</field>
+                                                        <value name="A">
+                                                          <block type="text_join" id="mG%OJ61P1utMx9k`^S4!">
+                                                            <mutation items="1"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="variables_get" id="Ilk~IK7_{nLFP[Fwu=cE">
+                                                                <field name="VAR">_msg</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="text" id="IB!DJzyHrVH=%(!-JJ},">
+                                                            <field name="TEXT">off</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="mpython_off_RGB" id="5@Ex_Mt^tUHv1{uL=;`N"></block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="controls_repeat_forever" id="r0uYbyu!_Xi-b~bLy/CD">
+                                <statement name="DO">
+                                  <block type="mqtt_wait_msg" id="C.%.LxVFj?vxyk-AUQMt"></block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

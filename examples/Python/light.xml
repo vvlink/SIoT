@@ -1,0 +1,74 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_repeat_forever" id="eHte91|%IbxNQk@:Bd7Y" x="-278" y="-143">
+    <statement name="DO">
+      <block type="mpython_display_fill" id="y7`y1^{bl~djG,v1o/c`">
+        <field name="display_fill">fill(0)</field>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="rejRBu7:PzudJGn`e{Z|">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="=Af^c}u.5w[g=Y6kMhr|">
+                <field name="mpython_4_lines">0</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="6j0@BsUH2)bh1t8,JuQj">
+                <field name="TEXT">光线值</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_DispChar_5lines" id="-2{.Jd`0aha/HPlq7?4g">
+                <field name="TEXTMODE">1</field>
+                <value name="DispChar_5lines">
+                  <shadow type="mpython_4_lines" id="V`U=%t:BZ)0GS~_3Cvg_">
+                    <field name="mpython_4_lines">16</field>
+                  </shadow>
+                </value>
+                <value name="message">
+                  <shadow type="text" id=";0G%Gv7xl+9fT},BzSYA">
+                    <field name="TEXT">光线</field>
+                  </shadow>
+                  <block type="text_join" id="U$yrW-lWHb3N}fB]!ndy">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                      <block type="mpython_read_light" id="Gy-D/ER|f,[*c%H-ZL4{"></block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="mpython_display_Show" id="P$JlgJabTrs7[XQPtm:b">
+                    <next>
+                      <block type="text_print" id="JHcJlvmqX7([7.]@UM57">
+                        <value name="TEXT">
+                          <shadow type="text" id="zK.WCYnV((BwnmHqoRv@">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="text_join" id="@76C/1iW$,ck*:v^vW7O">
+                            <mutation items="1"></mutation>
+                            <value name="ADD0">
+                              <block type="mpython_read_light" id="*TU~C|_}[?HAI*cUb=[u"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mpython_sleep_ms" id="$4tT8?0ioX]fWJ`UpEs$">
+                            <field name="ms_us">s</field>
+                            <value name="duration">
+                              <shadow type="math_number" id="fW9QKTTa4:tZNYTd}~,E">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

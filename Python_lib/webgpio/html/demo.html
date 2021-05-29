@@ -1,0 +1,23 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>WebGPIO for vvboard</title>
+            <style>.c{font-size:12px;}</style>
+          </head>
+          <body class="c">
+          <div class="c"><b>远程感知 -->> </b></div>
+        <form action="" method="get" enctype="application/x-www-form-urlencoded" target="result">
+            <label for="tag" class="c">引脚</label><input type="text" name="pin" value="A0" class="c">（如D2-D13，A0-A5）<br>
+            <input type="submit" value=" 发送读取命令 " class="c">
+        </form>
+        <div class="c"><b>远程控制 -->> </b></div>
+        <form action="" method="post" enctype="application/x-www-form-urlencoded" target="result">
+            <label for="pin" class="c">引脚编号</label><input type="text" name="pin" value="D13" class="c">（如D2-D13）<br>
+            <label for="type" class="c">控制类型</label><input type="text" name="type" value="1" class="c">（可以输入1、2、3，分别指：digital、analog和servo三种）<br>
+            <label for="value" class="c">设置数值</label><input type="text" name="value" value="1" class="c">
+            <input type="submit" value=" 发送控制命令 " class="c">
+        </form>
+        <div class="c"><a href="https://github.com/vvlink/vvBoard-docs/tree/master/webgpio/" target="_blank">点击这里得到详细介绍</a></div>
+        <div class="c"><b>反馈显示 -->> </b></div>
+        <div class="c">
+            <iframe name="result" frameborder="0" scrolling="no" class="c" src=""></iframe>
+        </div></body></html>

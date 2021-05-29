@@ -1,0 +1,335 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="84?h6yS[m,zFsb3U=ktW" x="-294" y="-1252">
+    <value name="ssid">
+      <shadow type="text" id="s,o#68^*~}[k]KKAN7yB">
+        <field name="TEXT">HUAWEI-8427</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="T#@ppTK1PI86mpQCs]vC">
+        <field name="TEXT">15078068427</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="mqtt_setup" id="1I8YppG70Pp(Vu2v;u[W">
+        <value name="Server">
+          <shadow type="text" id="i2]6[p!Nx*%.xc/P$hV:">
+            <field name="TEXT">192.168.100.7</field>
+          </shadow>
+        </value>
+        <value name="Client_ID">
+          <shadow type="text" id="7_WWVa%9WL~qK@2=fUP4">
+            <field name="TEXT">0805e3d04f3b34e7</field>
+          </shadow>
+        </value>
+        <value name="Iot_id">
+          <shadow type="text" id="NoERlaIDBb00fM@ucHN]">
+            <field name="TEXT">siot</field>
+          </shadow>
+        </value>
+        <value name="Iot_pwd">
+          <shadow type="text" id="7,(HQcRGfybaEccX9Emo">
+            <field name="TEXT">dfrobot</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mqtt_connect" id="QgfE#QzWwo4cU@yKoc$h">
+            <next>
+              <block type="mqtt_publish" id="Wl]ik~x14f)eVtt^K,!l">
+                <value name="msg">
+                  <shadow type="text" id="rgB8T8Qz~slDvi99}%8U">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                </value>
+                <value name="topic">
+                  <shadow type="text" id="K1e%$O@m/sewo))BZoH9">
+                    <field name="TEXT">DFRobot/mouseandkeyborad</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="T~C7lD$wH:{=9`mdVy])" x="412" y="-1064">
+    <mutation>
+      <arg name="text"></arg>
+    </mutation>
+    <field name="NAME">show</field>
+    <field name="PARAMS">参数： text</field>
+    <statement name="STACK">
+      <block type="mpython_display_fill" id="fK,:7g_3Qf%!){.KUxi5">
+        <field name="display_fill">fill(0)</field>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="P*mAm/CPad^K7e7ZSpRA">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="+*g5@t_42O]?3bpx4YDP">
+                <field name="mpython_4_lines">0</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id=",{c}vermd.ey%}Ihq1-f">
+                <field name="TEXT">已发送：</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_DispChar_5lines" id="AEC{t=o.fC:b$tZiU7!;">
+                <field name="TEXTMODE">1</field>
+                <value name="DispChar_5lines">
+                  <shadow type="mpython_4_lines" id="3uHRB8SrTb+HFpr~i]$k">
+                    <field name="mpython_4_lines">16</field>
+                  </shadow>
+                </value>
+                <value name="message">
+                  <shadow type="text" id=",{c}vermd.ey%}Ihq1-f">
+                    <field name="TEXT">Hello, world!</field>
+                  </shadow>
+                  <block type="variables_get" id="a]FZmG?fG!1//Dwt%y[d">
+                    <field name="VAR">text</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="mpython_display_Show" id="m`b!eNSLv?s{lD0Ban*1"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_touch_event" id="zgz[N`=llhyTt5r8#@fW" x="-283" y="-947">
+    <field name="touchPad">P</field>
+    <field name="action">pressed</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="|ufjDsJp+C,VH!NDyjk/">
+        <value name="msg">
+          <shadow type="text" id="$l-sdYahN-eBE^=Be?5h">
+            <field name="TEXT">LEFT</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="(g!6at1KjpzaXiH}7Y??">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="ha^o*{{:lP8JrW0X_YYg">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id=";BzYBQUk|dUV;_F|K2Pi">
+                <field name="TEXT">方向左键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_touch_event" id="*pa+6|/04kf1+p#M`TdV" x="-286" y="-798">
+    <field name="touchPad">N</field>
+    <field name="action">pressed</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="]U~DdR5knG-DeBz$P7YY">
+        <value name="msg">
+          <shadow type="text" id="PKrTwM4edqIZB?ss0PK~">
+            <field name="TEXT">RIGHT</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="EV4~m1#cyPz]Pm8|!;lm">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="qQ_r=g9(Y#315O9d6!1t">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id="Uhs,h2]XW(4{8C@H*%;=">
+                <field name="TEXT">方向右键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_touch_event" id="+WQZ#3#ufumAki;[nKh[" x="-281" y="-650">
+    <field name="touchPad">T</field>
+    <field name="action">pressed</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="35e3Q*#)qs$f.Jd~(XhK">
+        <value name="msg">
+          <shadow type="text" id="8/SVNI-(bfK:Pyu]}H:U">
+            <field name="TEXT">UP</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="-Su*tYp:S]c2$Kp3m).R">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="C^}V5VV-e;1]:e~7Kv])">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id="q9aDQ3|Uo7=r^.8Cc9=p">
+                <field name="TEXT">方向上键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_touch_event" id="X$$;?[lIhUB;;-.wXbc1" x="-278" y="-502">
+    <field name="touchPad">H</field>
+    <field name="action">pressed</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="T#W#hT[n8hcG^cdJb.f:">
+        <value name="msg">
+          <shadow type="text" id="SuOFwFbbhi@207ynI=%w">
+            <field name="TEXT">DOWN</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="@s2:]QTXrU+b@Wq8e`xz">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="BFrR;lx:;FKDI(/9r1Rl">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id="t{8MaELq+*.o!F8$$8n0">
+                <field name="TEXT">方向下键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_touch_event" id="^fgrbpk/[6-F~M|BDt#2" x="-279" y="-349">
+    <field name="touchPad">Y</field>
+    <field name="action">pressed</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="8EjHRr5_Bd@nxfM:8b`,">
+        <value name="msg">
+          <shadow type="text" id="Ucpt9)m:E-1GdI^pWf+]">
+            <field name="TEXT">F5</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="|#M-pl6gdP7x,-SoerMh">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="*0VKNgs8e1An|v/26?#x">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id="J4Vld9`C[oY)9elVBH/u">
+                <field name="TEXT">F5键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_Interrupt_AB" id="O0)N(5GS/I?@j$2nm{rD" x="-276" y="-203">
+    <field name="button">button_a</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="BgTP_[BPK/fT68i0x/_G">
+        <value name="msg">
+          <shadow type="text" id="Ivs!k;nGRS@O0t]0$|$g">
+            <field name="TEXT">ENTER</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="4;6v0uRCF[K)8AkJ85!I">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="Dx96|f+OkXY{-fb5{;35">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id="raJJ]Ssh73~nDEURSsRb">
+                <field name="TEXT">Enter键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_Interrupt_AB" id="y2$BY]pU70hEvi`r1oy;" x="-276" y="-55">
+    <field name="button">button_b</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="f!_.;t,;Z_H(%Q@6%ds0">
+        <value name="msg">
+          <shadow type="text" id="adx)^R6z3-^|sdK^z{a%">
+            <field name="TEXT">ESC</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="mJ=Ob=9X5):?d%c:YXWN">
+            <field name="TEXT">DFRobot/mouseandkeyborad</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="Pv2)$8Z[s,m+4LL)?64s">
+            <mutation name="show">
+              <arg name="text"></arg>
+            </mutation>
+            <field name="NAME">show</field>
+            <field name="WITH">与：</field>
+            <field name="ARGNAME0">text</field>
+            <value name="ARG0">
+              <block type="text" id="J^8G:gB11nyt-5xx.%8F">
+                <field name="TEXT">ESC键</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,108 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="gF|4MYvy%9;F~EV@HVBo" x="-683" y="-554">
+    <value name="ssid">
+      <shadow type="text" id="H_XJ^~5~%gx?_fv,:K4_">
+        <field name="TEXT">makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="!q26gJ!G-y]qp=+D|qP|">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="mqtt_setup" id="Y99q__DOJbOa%MU_y[wl">
+        <value name="Server">
+          <shadow type="text" id="x%I]S.6Wp9WLb*ELcGv)">
+            <field name="TEXT">192.168.1.135</field>
+          </shadow>
+        </value>
+        <value name="Client_ID">
+          <shadow type="text" id="O7vseu|d3~Aw,,r*e{~d">
+            <field name="TEXT">zhangkongban</field>
+          </shadow>
+        </value>
+        <value name="Iot_id">
+          <shadow type="text" id="JoCCPE2xDi@tJxIsD12M">
+            <field name="TEXT">siot</field>
+          </shadow>
+        </value>
+        <value name="Iot_pwd">
+          <shadow type="text" id="F8gL8q)xTdx82#@;{?Tm">
+            <field name="TEXT">dfrobot</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mqtt_connect" id="ytrZLG;4O4*:eDz]E#B|">
+            <next>
+              <block type="mqtt_publish" id=".(xd^{$fx2}U9GeB;LaB">
+                <value name="msg">
+                  <shadow type="text" id="pRe]wHuw$vO$JYcfErOb">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                </value>
+                <value name="topic">
+                  <shadow type="text" id=")LJSc(~d$qd?!e2wV$)^">
+                    <field name="TEXT">mpython/001</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="mqtt_rec_from_topic" id="v@kX8smEzD(dq]l@hMqp">
+                    <field name="topic">mpython/001</field>
+                    <value name="msg">
+                      <block type="variables_get" id="0tb^m9eTn]t{%4n?I[f6">
+                        <field name="VAR">_msg</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="mpython_clear_dispchar_5lines" id="Gs1p3}oi9W|;Hs1d,/?k">
+                        <value name="DispChar_5lines">
+                          <shadow type="mpython_4_lines" id="ohIO(P8N4#optugSmd/G">
+                            <field name="mpython_4_lines">0</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="mpython_display_DispChar_5lines" id="J0%|yo6|;0yqcZq{H^#m">
+                            <field name="TEXTMODE">1</field>
+                            <value name="DispChar_5lines">
+                              <shadow type="mpython_4_lines" id=".q~UEA9wbfCZ5X@X_tl/">
+                                <field name="mpython_4_lines">0</field>
+                              </shadow>
+                            </value>
+                            <value name="message">
+                              <shadow type="text" id="5_Z`/]sLehTrmR_sgB%_">
+                                <field name="TEXT">Hello, world!</field>
+                              </shadow>
+                              <block type="text_join" id=";(cF_Y,{pSPy0Yk3*pr/">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                  <block type="variables_get" id="bLjwFS(BvpSzEh2fw+u+">
+                                    <field name="VAR">_msg</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="mpython_display_Show" id="j`_6l.+m8U?]~2LkPR#g"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_repeat_forever" id="#!b5t$:ol;k.([*6h$dI">
+                        <statement name="DO">
+                          <block type="mqtt_wait_msg" id="b3YA+UYGu8*Hn^E@A7b^"></block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

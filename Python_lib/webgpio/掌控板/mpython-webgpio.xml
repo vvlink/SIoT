@@ -1,0 +1,232 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="L+_QC2OsK:6f!BpD8tU(">v</variable>
+  </variables>
+  <block type="mpython_Interrupt_AB" id="p+O+nf4Ln0~{,yp{ta$3" x="-314" y="-179">
+    <field name="button">button_a</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mpython_urequests_get_post" id="}HtRp]lrr[s]k4~SS^y%">
+        <field name="method">post</field>
+        <value name="url">
+          <shadow type="text" id="5m]FUPV~P`JW.E?_lhx(">
+            <field name="TEXT">http://192.168.3.42:1024</field>
+          </shadow>
+        </value>
+        <value name="json">
+          <block type="dict_create_with_items_insert" id="Rmonh*Q!dA,5[vA1yv;j">
+            <mutation items="3"></mutation>
+            <field name="TIP">初始化字典</field>
+            <field name="KEY0">pin</field>
+            <field name="KEY1">value</field>
+            <field name="KEY2">type</field>
+            <value name="ADD0">
+              <block type="text" id="Ja+rz(UGDl!$_DFsMf2[">
+                <field name="TEXT">D13</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text_join" id="]%_(*oNHU%O6=sB$n1s@">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                  <block type="variables_get" id="H.wH_vHScMq_I%ck4DUQ">
+                    <field name="VAR" id="L+_QC2OsK:6f!BpD8tU(" variabletype="">v</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="wW1dyEJ:CzM4r)ea0_t-">
+                <field name="TEXT">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id=".?rYRLLCgeG|eJR~0jd`">
+            <field name="VAR" id="L+_QC2OsK:6f!BpD8tU(" variabletype="">v</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="y9PP/2BI?_,DdNaKCDEO">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <shadow type="math_number" id="))6.Mq`ctPbq}4Rt$DKV">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="=c}?|Up`7ZaILY(e8Z*m">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id=")k~^U-cH|,unk`ZfGK*@">
+                    <field name="VAR" id="L+_QC2OsK:6f!BpD8tU(" variabletype="">v</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="mpython_clear_dispchar_5lines" id="li/u(,RH,ER%x-FRD42%">
+                <value name="DispChar_5lines">
+                  <shadow type="mpython_4_lines" id="C?#VYT{P6Gb3cNAN+SvL">
+                    <field name="mpython_4_lines">16</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="mpython_display_DispChar_5lines" id="B+:QUMs{A_fsGi,_i~Ka">
+                    <field name="TEXTMODE">1</field>
+                    <value name="DispChar_5lines">
+                      <shadow type="mpython_4_lines" id="AzZ)d;n@PJGz4hHIdhHw">
+                        <field name="mpython_4_lines">16</field>
+                      </shadow>
+                    </value>
+                    <value name="message">
+                      <shadow type="text" id="H?E$CrK9=R8ssg=cSf5,">
+                        <field name="TEXT"></field>
+                      </shadow>
+                      <block type="dict_key_value" id="aJttYE0V-i_hGx2zj%[D">
+                        <value name="dict_name">
+                          <shadow type="text_dict" id="k??D)jDs](qWjUBus^)6">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="mpython_response" id="Z9Dn5)Wf*#61JrfeQr*.">
+                            <field name="response">json()</field>
+                          </block>
+                        </value>
+                        <value name="dict_items">
+                          <shadow type="text" id="HE:?;eO9J58RB,UgMtQO">
+                            <field name="TEXT">msg</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="mpython_display_Show" id="QHih04uGKowme6L-PS]s"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_Interrupt_AB" id="n0=8HG$+6,1`/GHMpDIL" x="-311" y="148">
+    <field name="button">button_b</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mpython_urequests_get_post" id="vo+3B).z?`UOUF%;GL:S">
+        <field name="method">get</field>
+        <value name="url">
+          <shadow type="text" id="_f:o^%Mjz_^WdBl!HTtB">
+            <field name="TEXT">http://192.168.3.42:1024</field>
+          </shadow>
+        </value>
+        <value name="json">
+          <block type="dict_create_with_items_insert" id="@e+lTOV^lYRQzn}BR~N@">
+            <mutation items="1"></mutation>
+            <field name="TIP">初始化字典</field>
+            <field name="KEY0">pin</field>
+            <value name="ADD0">
+              <block type="text" id="|csQbk=4!$$YUd7qB6s)">
+                <field name="TEXT">A0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="mpython_clear_dispchar_5lines" id="UL+K?yR=Qo+l8IR[jyFf">
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="CCuT({grYGSmt#axU$+3">
+                <field name="mpython_4_lines">48</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_DispChar_5lines" id="XLK:0KI@lVz@#VS-8d{2">
+                <field name="TEXTMODE">1</field>
+                <value name="DispChar_5lines">
+                  <shadow type="mpython_4_lines" id=";A2of(QOXpOq74zf(MlI">
+                    <field name="mpython_4_lines">48</field>
+                  </shadow>
+                </value>
+                <value name="message">
+                  <shadow type="text" id="H?E$CrK9=R8ssg=cSf5,">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="text_join" id="X?PZ,f86mmYBi)c|tQ!g">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="D/)FMr?d~%!5tF(F]uu,">
+                        <field name="TEXT">A0的值为：</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dict_key_value" id="K^l~czD]_?Rt8QAM/$uy">
+                        <value name="dict_name">
+                          <shadow type="text_dict" id="k??D)jDs](qWjUBus^)6">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="mpython_response" id="L^w*?d~PGoOc]ak%6FLo">
+                            <field name="response">json()</field>
+                          </block>
+                        </value>
+                        <value name="dict_items">
+                          <shadow type="text" id="XM{Ni/!-aZksX5)p]T|s">
+                            <field name="TEXT">msg</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="mpython_display_Show" id="p6[+t-%:lt$bSX)aD1DJ"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_init_wifi" id="L4@rtPmce/TrhN-M/=iv" x="-311" y="417">
+    <value name="ssid">
+      <shadow type="text" id="umm@hv9mEW??.vw7+k]3">
+        <field name="TEXT">jf</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="}%jN[Nv/j5=}}7+Hz{uU">
+        <field name="TEXT">12345678</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="mpython_display_DispChar_5lines" id="#Sb2_l}P)MSGfC|lX4B*">
+        <field name="TEXTMODE">1</field>
+        <value name="DispChar_5lines">
+          <shadow type="mpython_4_lines" id="E14Ud~bz_4lg?2CvOp0X">
+            <field name="mpython_4_lines">0</field>
+          </shadow>
+        </value>
+        <value name="message">
+          <shadow type="text" id="9ppII%V8}XXbX6PD9[V)">
+            <field name="TEXT">按A键控制虚谷号13口</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mpython_display_Show" id="J!h.PX%cC,uKI6}KDhMK">
+            <next>
+              <block type="variables_set" id="z6U=yR$u2f9T(Yqf#=O(">
+                <field name="VAR" id="L+_QC2OsK:6f!BpD8tU(" variabletype="">v</field>
+                <value name="VALUE">
+                  <block type="math_number" id=".mU6^{VhApbnr=?^GF!`">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
+	<script src="js/jquery-2.1.4.min.js" crossorigin="anonymous"></script>
+	<script src="js/jquery.cookie.min.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="js/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="js/app.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/FileSaver.min.js"></script>
+	<!-- 统计图 -->
+
+	<script type="text/javascript" src="js/echarts.common.min.js"></script>
+	<!-- <script type="text/javascript" src="js/Highcharts-4.2.1/js/highcharts.js"></script> -->
+	<!-- <script type="text/javascript" src="js/Highcharts-4.2.1/js/highcharts-3d.js"></script> -->
+	<!-- 时间 -->
+	<link rel="stylesheet" href="js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="js/bootstrap-datetimepicker/css/datetimepicker.css">
+	<script src="js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+	<script src="js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+	<title></title>
+	<meta name="description" />
+</head>
+
+<body class="no-skin">
+	<div class="container" id="appContainer">
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a  target="_blank">
+						<div src="images/obloq_logo.png" class="navbar-brand"
+							style="background-color: rgb(0, 0, 0);padding: 16px 20px;color: #fff;">SIoT</div>
+					</a>
+	
+				</div>
+	
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html"> 项目列表</a></li>
+						<li class="active"><a href="devices.html">设备列表</a></li>
+						<li><a href="sendMsg.html">发送消息</a></li>
+						<li><a href="sfarm.html">智慧农场（插件）</a></li>
+	
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<label for="exampleInputEmail1">当前主题 : {{topic}}</label>
+		<form class="form-inline">
+			<div class="form-group hidden">
+				<label for="exampleInputEmail1">主题（项目ID/设备名）</label>
+				<input type="text" :value="topic" class="form-control" readonly id="topic" placeholder="主题： 项目ID/设备名">
+			</div>
+	
+			<div class="form-group">
+				<label for="exampleInputEmail1">发送消息</label>
+				<input type="text"  value="" class="form-control" id="msg" placeholder="消息内容">
+			</div>
+			<button type="button" class="btn btn-default" @click="sendMsg">发送</button>
+	
+		</form>
+		<div>(为消息加上->前缀代表此消息为纯指令消息，不会被存入数据库。例如"->off")</div>
+		<div class="line"></div>
+	
+		<form class="form-inline" style="margin-top: 20px">
+			<div class="form-group">
+				<label class="sr-only" for="start_time">开始时间</label>
+				<input type="text" class="form-control" id="start_time" placeholder="开始时间">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="end_time">结束时间</label>
+				<input type="text" class="form-control" id="end_time" placeholder="结束时间">
+			</div>
+	
+			<div class="form-group">
+	
+				<select class="form-control" id="limit">
+					<option value="100">100条</option>
+					<option value="300">300条</option>
+					<option value="600">600条</option>
+					<option value="1000">1000条</option>
+					<option value="10000">10000条</option>
+				</select>
+			</div>
+	
+			<button type="button" class="btn btn-default" @click="search">查询</button>
+			<button type="button" class="btn btn-default" @click="tableToExcel">导出查询结果</button>
+			<button type="button" class="btn btn-default" @click="setShow">隐藏/显示图表</button>
+			<label type="button" class="btn btn-default" @click="setIntervalStatus">
+				  自动刷新消息
+				<input type="checkbox" name="IntervalStatus" value="1"> 
+			</label>
+		</form>
+		<!-- 图表 -->
+		<section>
+			<div style="height: 400px; margin-top: 20px" id="highcharts" v-show="isShow"></div>
+		</section>
+		<!-- 图表 -->
+		<section>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!-- <th>ID</th> -->
+						<th>Topic</th>
+						<th>消息</th>
+						<th>时间</th>
+	
+					</tr>
+				</thead>
+				<tbody>
+	
+					<tr v-for="(item,k) in items2">
+						<td>{{item.Topic}}</td>
+						<td>{{item.Content}}</td>
+						<td>{{item.Created}}</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+		</section>
+	
+	</div>
+</body>
+<script src="modules/message.js"></script>
+
+</html>

@@ -1,0 +1,135 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="(sU9Aw3PCeY^~h7qTW`L" x="-215" y="-187">
+    <value name="ssid">
+      <shadow type="text" id="W{_KN!B4G{WM[,+dLBP%">
+        <field name="TEXT">makerspace</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="beUZhiv7[vtEeB.0Ma*Q">
+        <field name="TEXT">m@kersp@ce</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="mpython_display_DispChar_5lines" id="loK+Dn2[0nr[7qBePp!_">
+        <field name="TEXTMODE">1</field>
+        <value name="DispChar_5lines">
+          <shadow type="mpython_4_lines" id="hmydb8lT+t2#/Vb=maix">
+            <field name="mpython_4_lines">0</field>
+          </shadow>
+        </value>
+        <value name="message">
+          <shadow type="text" id="?(o}4g;|ahvH/o=B,bYb">
+            <field name="TEXT">Hello, world!</field>
+          </shadow>
+          <block type="mpython_WiFi_config" id="NQM_(%qq.C_r*+]BjrPQ">
+            <field name="WiFi_config">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="mpython_display_Show" id="EnxK*~?H.Z5NDd~0FTqs">
+            <next>
+              <block type="mqtt_setup" id="4h;o7!r0CxwZ-Nw@v-V+">
+                <value name="Server">
+                  <shadow type="text" id="q~g.x.5(#X@IzQaGP9P-">
+                    <field name="TEXT">192.168.1.135</field>
+                  </shadow>
+                </value>
+                <value name="Client_ID">
+                  <shadow type="text" id="(%sF.+I0M.(g-j]rNOF6">
+                    <field name="TEXT">zhangkong</field>
+                  </shadow>
+                </value>
+                <value name="Iot_id">
+                  <shadow type="text" id="B~^z0$eAA5_!nD}HA=Tc">
+                    <field name="TEXT">siot</field>
+                  </shadow>
+                </value>
+                <value name="Iot_pwd">
+                  <shadow type="text" id="]YYI2R;][CbUg=:dYG0E">
+                    <field name="TEXT">dfrobot</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="mqtt_connect" id="flM-D+IQE9D4/H7x/O7N"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="mpython_Interrupt_AB" id="d|n;s#Y%ua(s-t):aBFM" x="-215" y="103">
+    <field name="button">button_a</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="UL]%CU|]fN9CNSdNwqAh">
+        <value name="msg">
+          <shadow type="text" id="uerx2`:650AZs-D0FXs3">
+            <field name="TEXT">A</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="qcV-z)y1E!CamajMkXe]">
+            <field name="TEXT">mpythonx/001</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="jB|iy|*{*fypXou}#(6W">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="8K)zP(aD$CgdxUn6m2;c">
+                <field name="mpython_4_lines">48</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="++$=/}-k+a5aBvdUrX7}">
+                <field name="TEXT">A</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_Show" id=".KMN54^m8w1uM4Bh?8Kk"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_Interrupt_AB" id="0jlh!`gC+0!OF]To4_z_" x="-216" y="287">
+    <field name="button">button_b</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mqtt_publish" id="IX0#),f1y(lU[9:,6z0X">
+        <value name="msg">
+          <shadow type="text" id="aSYzE)BLhgBUnWhvfH2f">
+            <field name="TEXT">B</field>
+          </shadow>
+        </value>
+        <value name="topic">
+          <shadow type="text" id="jGR5nPbnECe5VV#.DLPb">
+            <field name="TEXT">mpythonx/001</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="ii_jIQDk]!q;xK`?rSNs">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="W#ZpOsvJ^QV_F|3JUFPT">
+                <field name="mpython_4_lines">48</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="oZ7Z~|5vyG`+4{89@N]t">
+                <field name="TEXT">B</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_Show" id="Q`|nBDeo?[5qx^DQ7%tX"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

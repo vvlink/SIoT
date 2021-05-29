@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
+	<script src="js/jquery-2.1.4.min.js" crossorigin="anonymous"></script>
+	<script src="js/jquery.cookie.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="js/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/app.js"></script>
+	<title></title>
+	<meta name="description" />
+</head>
+
+<body class="no-skin">
+	<div class="container" id="appContainer">
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a  target="_blank"> <div src="images/obloq_logo.png" class="navbar-brand" style="background-color: rgb(0, 0, 0);padding: 16px 20px;color: #fff;">SIoT</div> </a>
+	
+				</div>
+	
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html"> 项目列表</a></li>
+						<li><a href="devices.html">设备列表</a></li>
+						<li><a href="sendMsg.html">发送消息</a></li>
+						<li><a href="sfarm.html">智慧农场（插件）</a></li>
+
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+	
+						<li><a href="#this" onclick="app.logout()"><span id="loginUserName"></span> 退出登陆</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	<div style="padding-bottom: 10px"><label for="">主题（项目ID/设备名）</label></div>
+		<div class="line"></div>
+	
+		<div class="form-inline">
+			<div class="form-group">
+				<label class="sr-only" for="start_time">项目ID</label>
+				<input type="text" class="form-control" id="projectId" placeholder="项目ID">
+			</div>
+	
+			<div class="form-group">
+	
+				<select class="form-control" id="limit">
+					<option value="100">100条</option>
+					<option value="300">300条</option>
+					<option value="500">500条</option>
+					<option value="800">800条</option>
+					<option value="1000">1000条</option>
+				</select>
+
+
+			</div>
+	
+			<button type="button" class="btn btn-default" @click="search">查询</button>
+		</div>
+
+
+		<section>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>项目ID</th>
+						<th>备注</th>
+	
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+	
+					<tr v-for="(project,k) in projectsList">
+						<th scope="row">{{project.ID}}</th>
+						<td>{{project.Description}}</td>
+	
+						<td>
+							 <a :href="'devices.html?projectID='+project.ID"
+								class="text-success">查看设备列表</a>
+								<a href="#this" @click="editProject(k)">添加备注</a>
+							<a class="text-danger" href="#this" @click="deleteprj(project.ID)">删除</a></td>
+					</tr>
+
+
+				</tbody>
+			</table>
+		</section>
+		<!-- 修改项目 -->
+		<div class="modal fade" tabindex="-1" id="editProjectBox" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">账户备注</h4>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="exampleInputEmail1">ID</label>
+								<input type="text" class="form-control" :value="editProjectData.ID" readonly placeholder="ID">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">备注</label>
+								<input type="text" class="form-control" id="Description" :value="editProjectData.Description"
+									placeholder="备注">
+							</div>
+
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" @click="updateprj">保存</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	
+	</div>
+</body>
+<script src="modules/index.js"></script>
+<div class="row footer-bottom">
+      <ul class="list-inline text-center">
+        <li><a href="https://github.com/vvlink/SIoT" target="_blank">查看说明文档</a></li><li></li>
+      </ul>
+    </div>
+</html>

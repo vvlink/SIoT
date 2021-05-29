@@ -1,0 +1,126 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_radio_on_off" id="kGZf^hS$O.sdSq8]gVl4" x="-224" y="-150">
+    <field name="on_off">on</field>
+    <next>
+      <block type="mpython_radio_channel" id="ux25kS|/]^#+laLj.SHE">
+        <comment pinned="false" h="80" w="160">两个掌控板连接频道相同</comment>
+        <value name="channel">
+          <shadow type="math_number" id="9irL|`S/C/GXQJ]XVh8s">
+            <field name="NUM">13</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="-oF-UZeU^wUebzk:4yW1">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="p%oGJq[iDe,A]PEru;AV">
+                <field name="mpython_4_lines">0</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="/Z:W`DHuN%cX3Aa*i#UP">
+                <field name="TEXT">无线广播</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_Show" id="Yf:lT}^}LaWE9C8eLP.x"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="mpython_Interrupt_AB" id="X]|FZ*GJ1v!B@|R.`|=(" x="-226" y="22">
+    <field name="button">button_a</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mpython_radio_send" id="H^b,j8^O@ll4(v|a$t;1">
+        <value name="send">
+          <shadow type="text" id="6SwmO97cUo%KrEYDSLv9">
+            <field name="TEXT">a</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_radio_recv" id="YO)==9mOX[mge*bi^eDf" x="-227" y="126">
+    <value name="message">
+      <block type="variables_get" id="1)V6;rUR2,imw^O8l-hm">
+        <field name="VAR">_msg</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="AaOvlgx`=2(iGbd1_y23">
+        <value name="IF0">
+          <block type="logic_compare" id="+n$ynJqg%^5om_egtiRn">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="OUGUk^qGa[6,k#-,KR8@">
+                <field name="VAR">_msg</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="text" id="z[A-9fLwMpBcM;2i}%tf">
+                <field name="TEXT">b</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="mpython_set_RGB_color" id="we7M8rv?6Vl92*W)aJN)">
+            <field name="COLOUR">#ff0000</field>
+            <value name="num">
+              <shadow type="math_number" id=",;QNP5{1THu[W)_VP|ZF">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="E1XPn3nrA+}l!L75%DmD">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="_s;rW!$xie?hmqF?}.Mc">
+                <field name="mpython_4_lines">16</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="a(Ap|kH8-$Oz$x{*.wSP">
+                <field name="TEXT">收到b</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_Show" id="tmaZko3livM)YUZ|XUU5"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_Interrupt_AB" id="+Pn6tFJIwxdampd~~,U%" x="-229" y="344">
+    <field name="button">button_b</field>
+    <field name="action">down</field>
+    <statement name="DO">
+      <block type="mpython_off_RGB" id="0{fLZLi+SV^0ItU4jm9t">
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="}g2~S:sMDkVjt}ZdLK%O">
+            <field name="TEXTMODE">1</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="y:Q7YT=`^uLxmYl5VX)i">
+                <field name="mpython_4_lines">16</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="Qs]!|SO]L:CbWPHrvC)P">
+                <field name="TEXT">                       </field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_Show" id="R8UpGMGoc4w2NK[`yT^$"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

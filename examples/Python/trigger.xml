@@ -1,0 +1,153 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mpython_init_wifi" id="V!fz4O8{CYzaPR?!;C)X" x="-268" y="-348">
+    <value name="ssid">
+      <shadow type="text" id="c!{;VBY2jWVX%)m`JVK=">
+        <field name="TEXT">hu</field>
+      </shadow>
+    </value>
+    <value name="password">
+      <shadow type="text" id="ggP*{,9f!hhEZ@V9o5}J">
+        <field name="TEXT">123123123</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="mpython_display_DispChar_5lines" id="C4O1bw-]}K3H/wb_iwbm">
+        <field name="TEXTMODE">1</field>
+        <value name="DispChar_5lines">
+          <shadow type="mpython_4_lines" id="Jcc~zDc2gjq*@hI`HR;N">
+            <field name="mpython_4_lines">0</field>
+          </shadow>
+        </value>
+        <value name="message">
+          <shadow type="text" id="3*/*3sc2/?%RJt#Y`ywN">
+            <field name="TEXT">wifi已连接</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mpython_display_Show" id="$e[a:sWrkEN#P)UO%jDH">
+            <next>
+              <block type="mpython_onenet_setup" id="BxT6%-$Ssg^v3I~j;)yy">
+                <value name="server">
+                  <shadow type="text" id="oTrLm=2AQpD/I9Tv^[{7">
+                    <field name="TEXT">183.230.40.39</field>
+                  </shadow>
+                </value>
+                <value name="device_id">
+                  <shadow type="text" id="FX.y0xE|SJm}^lY`Nn(g">
+                    <field name="TEXT">527511738</field>
+                  </shadow>
+                </value>
+                <value name="product_id">
+                  <shadow type="text" id=";4h+e1*K{fX*emvSFt|z">
+                    <field name="TEXT">244733</field>
+                  </shadow>
+                </value>
+                <value name="product_APIKey">
+                  <shadow type="text" id=")+yCLRxfDJ=*eLYXwXJ0">
+                    <field name="TEXT">isTkCAE9nh3MgIQ4KKJAr04uXxw=</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="mpython_display_DispChar_5lines" id="lE|@fp5kYhd_$UO~p@a(">
+                    <field name="TEXTMODE">1</field>
+                    <value name="DispChar_5lines">
+                      <shadow type="mpython_4_lines" id="nG}08W9Et6s-1MZ:PU1f">
+                        <field name="mpython_4_lines">16</field>
+                      </shadow>
+                    </value>
+                    <value name="message">
+                      <shadow type="text" id="POd*T?DeMfx6k|sH$:i-">
+                        <field name="TEXT">连接成功</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="mpython_display_DispChar_5lines" id="6ez{FM$Wf^G#K@A6):CV">
+                        <field name="TEXTMODE">1</field>
+                        <value name="DispChar_5lines">
+                          <shadow type="mpython_4_lines" id="P8;1QgGlHR%#3`:vNxrN">
+                            <field name="mpython_4_lines">32</field>
+                          </shadow>
+                        </value>
+                        <value name="message">
+                          <shadow type="text" id="2M=`JQ8Os:!rT.sAos/#">
+                            <field name="TEXT">光照值</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="controls_repeat_forever" id="Aq{{]z;o*?gFBe[19e$)">
+                            <statement name="DO">
+                              <block type="mpython_display_DispChar_5lines" id="a(RxL+M^5U[dsw?Y;@*R">
+                                <field name="TEXTMODE">1</field>
+                                <value name="DispChar_5lines">
+                                  <shadow type="mpython_4_lines" id="fL{A*SN$yaQzFU9PL,@Z">
+                                    <field name="mpython_4_lines">48</field>
+                                  </shadow>
+                                </value>
+                                <value name="message">
+                                  <shadow type="text" id="v]NK|!e/J::14hWQmwI]">
+                                    <field name="TEXT">          </field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_DispChar_5lines" id="DICZcD?W{}f;P/Cu51p@">
+                                    <field name="TEXTMODE">1</field>
+                                    <value name="DispChar_5lines">
+                                      <shadow type="mpython_4_lines" id="q{E[[3#HqY8Ir5u%A6b,">
+                                        <field name="mpython_4_lines">48</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="message">
+                                      <shadow type="text" id="v]NK|!e/J::14hWQmwI]">
+                                        <field name="TEXT">光照值</field>
+                                      </shadow>
+                                      <block type="text_join" id="CyIwR!1%$ZVU/oIfk53+">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                          <block type="mpython_read_light" id="AB]GT*rj_T~ZI~X%`c#l"></block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="mpython_display_Show" id="aJtgI%6`xK--r0.`hiW~">
+                                        <next>
+                                          <block type="mpython_onenet_pub_value" id="UY@6SmV!Q|)dgyiBfHsz">
+                                            <value name="NAME">
+                                              <shadow type="text" id="4EU^3V^oNz4u|mlq+z:P">
+                                                <field name="TEXT">light</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="VALUE">
+                                              <block type="mpython_read_light" id="VAt`Dtp5e(ALRpo2xMF)"></block>
+                                            </value>
+                                            <next>
+                                              <block type="mpython_sleep_ms" id="n4y/:+F$fZM#^ZMszI_t">
+                                                <field name="ms_us">s</field>
+                                                <value name="duration">
+                                                  <shadow type="math_number" id="HAQ,~mr#_Vspsj@aw|fG">
+                                                    <field name="NUM">5</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
