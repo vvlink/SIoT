@@ -2,18 +2,15 @@
 
 ## 编程工具列表
 
-### mPythonX
+### mPython
 
 简介：
 
 掌控板（mPython）的官方IDE，是一款图形化的MicrPython编程IDE，支持Windows 7/8/10、Windows XP、Macos、树莓派、虚谷号等。
 
 - GitHub地址：https://github.com/labplus-cn/mPython
-- 文档地址（下载地址）：https://mpython.readthedocs.io/zh/latest/board/mpythonX.html
+- 文档地址（下载地址）：https://mpython.readthedocs.io/
 
-  http://static.steamaker.cn/files/mpythonx-0.3.2-b1-win.exe
-
-  http://static.steamaker.cn/files/mpythonx-0.3.2-b1-mac.zip
 
 ### Mind+
 
@@ -21,7 +18,7 @@
 
 Mind+是一款基于Scratch3.0开发的青少年编程软件，支持arduino、micro:bit、掌控板等各种开源硬件，只需要拖动图形化程序块即可完成编程，还可以使用python/c/c++等高级编程语言，让大家轻松体验创造的乐趣。
 
-Mind+不仅自身可以连接MQTT服务器，还能够给掌控板（mPython）、Arduino、micro:bit等智能硬件编写与MQTT相关的代码。
+Mind+不仅自身可以连接MQTT服务器（实时模式），还能够给掌控板（mPython）、Arduino、micro:bit等智能硬件编写与MQTT相关的代码。
 
 推荐使用1.55以上版本。
 
