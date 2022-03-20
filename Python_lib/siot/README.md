@@ -2,11 +2,11 @@
 
 ## 简介
 
-SIoT是一款开源的MQTT服务器（代理），siot则是Python和MicroPython的一个库。
+SIoT是一款开源的MQTT服务器（代理），siot则是Python和MicroPython的MQTT库。
 
 ## 开发说明
 
-- MQTT的官方Python库明显不好用，前面要定义一个类，代码还很长，让初学者紧张。siot是虚谷物联团队基于MQTT paho写的一个Python库。为了让初学者能够写出更加简洁、优雅的Python代码。
+- MQTT的官方Python库明显不好用，前面要定义一个类，代码冗长，对初学者不够友好。siot是虚谷物联团队基于MQTT paho写的一个Python库，为了让初学者能够写出更加简洁、优雅的Python代码。
 
 - siot库同时支持MicroPython，语法完全一致。
 
