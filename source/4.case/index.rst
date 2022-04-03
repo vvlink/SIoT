@@ -14,7 +14,8 @@
     03_dataview
     04_Remotecontrol
     05_play
-    06_smartfarm
+    06_flowerpot
+    07_smartfarm
     08_DragonboatRaces
     09_subtitles
     10_vvboard
