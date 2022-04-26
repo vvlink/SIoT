@@ -16,9 +16,9 @@ SIoT是一款开源的MQTT服务器（代理），siot则是Python和MicroPython
 
 使用pip命令安装。
 
-	pip3 install siot
-
-	pip install siot
+    pip3 install siot
+    
+    pip install siot
 
 ## 官方地址
 
@@ -49,7 +49,6 @@ while True:
   siot.publish(IOT_pubTopic, "value %d"%tick)
   time.sleep(1)           #隔1秒发送一次
   tick = tick+1
-
 ```
 
 - 订阅消息：
@@ -74,8 +73,8 @@ siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
 siot.connect()
 siot.subscribe(IOT_pubTopic, sub_cb)
 siot.loop()
-
 ```
+
 - 订阅多条消息：
 
 ```
@@ -101,5 +100,4 @@ siot.set_callback(sub_cb)
 siot.getsubscribe(IOT_pubTopic1)  # 订阅消息1
 siot.getsubscribe(IOT_pubTopic2)  # 订阅消息2
 siot.loop()
-
 ```
