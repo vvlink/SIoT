@@ -25,7 +25,7 @@ siot库同时支持MicroPython，语法完全一致。
 官方地址
 -------------
 
-- GitHub地址：https://github.com/vvlink/SIoT/tree/master/siot-lib
+- GitHub地址：https://github.com/vvlink/SIoT/tree/master/Python-lib
 
 -------------
 使用说明
@@ -38,8 +38,10 @@ import siot
 2.连接MQTT服务器
 
 siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
-siot.connect()
-siot.loop()
+
+siot.connect()
+
+siot.loop()
 
 3.发送消息
 
@@ -52,7 +54,8 @@ siot.subscribe(IOT_pubTopic, sub_cb)
 “sub_cb”为回调函数的名称，需要写一个名称为“sub_cb”的函数，带3个参数，其中msg为订阅的消息，为一个元组，属性有topic和payload。如下面的代码。
 
 ::
-	def sub_cb(client, userdata, msg):	  print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
+	def sub_cb(client, userdata, msg):
+	  print("\nTopic:" + str(msg.topic) + " Message:" + str(msg.payload))
 
 -------------
 代码范例
