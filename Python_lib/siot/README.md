@@ -22,7 +22,7 @@ SIoT是一款开源的MQTT服务器（代理），siot则是Python和MicroPython
 
 ## 官方地址
 
-- GitHub地址：https://github.com/vvlink/SIoT/tree/master/siot-lib
+- GitHub地址：https://github.com/vvlink/SIoT/tree/master/Python-lib
 
 ## 使用说明：
 
