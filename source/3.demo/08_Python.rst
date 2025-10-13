@@ -40,23 +40,11 @@ siot的代码范例
 
 ::
 
-    import siot
-    import time
 
-    SERVER = "127.0.0.1"            #MQTT服务器IP
-    CLIENT_ID = ""                  #在SIoT上，CLIENT_ID可以留空
-    IOT_pubTopic  = 'xzr/001'       #“topic”为“项目名称/设备名称”
-    IOT_UserName ='siot'            #用户名
-    IOT_PassWord ='dfrobot'         #密码
-
-    siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)
-    siot.connect()
-
-    tick = 0
-    while True:
-      siot.publish(IOT_pubTopic, "value %d"%tick)
-      time.sleep(1)           #隔1秒发送一次
-      tick = tick+1
+	import siot	import time	SERVER = "127.0.0.1"            #MQTT服务器IP	CLIENT_ID = ""                  #在SIoT上，CLIENT_ID可以留空	IOT_pubTopic  = 'xzr/001'       #“topic”为“项目名称/设备名称”	IOT_UserName ='siot'            #用户名	IOT_PassWord ='dfrobot'         #密码	siot.init(CLIENT_ID, SERVER, user=IOT_UserName, password=IOT_PassWord)	siot.connect()	siot.loop()	tick = 0	try:	    while True:
+		# siot v1和v2都支持，但是v2将不保存消息	        siot.publish(IOT_pubTopic, "value %d"%tick)
+		# siot v2需要用“publish_save”，才能保存在数据库中，Web页面才能看到
+	        siot.publish_save(IOT_pubTopic, "value %d"%tick)	        time.sleep(1)           #隔1秒发送一次	        tick = tick+1	except:	    siot.stop()	    print("disconnect seccused")
 
 2.“订阅消息”参考代码
 
