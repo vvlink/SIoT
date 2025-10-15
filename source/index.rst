@@ -14,5 +14,6 @@
     2.setup/index
     3.demo/index
     4.case/index
-    5.advanced/index
-    6.attach/index
+    5.aicase/index
+    6.advanced/index
+    7.attach/index
