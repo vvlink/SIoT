@@ -4,19 +4,30 @@
 
 软件下载地址（项目主页）：
 
-http://mindplus.dfrobot.com.cn/siot
+https://mindplus.dfrobot.com.cn/siot
 
 软件下载地址（项目文档）：
 
 https://github.com/vvlink/SIoT/  
 
-SIoT V1系列：
+SIoT V1系列
+---------------------------
+
+软件下载地址（项目主页）：
+
+https://mindplus.dfrobot.com.cn/siot
 
 最新软件版本：SIoT v1.3
 
 直达地址：https://github.com/vvlink/SIoT/tree/master/software
 
-SIoT V2系列：
+
+SIoT V2系列
+---------------------------
+
+软件下载地址（项目主页）：
+
+https://mindplus.dfrobot.com.cn/dashboard
 
 最新版本：2.0
 
